@@ -1,50 +1,76 @@
 <div id="header">
-	<h1 id="logo">
-	   <span id="cine">Ciné</span> <span id="critique">Critiques</span>
-	</h1>
+    <div class="row">
+	  	<div class="col-md-8">
+		  	<h1 id="navbar">
+				<span id="cine">Ciné</span> <span id="critique">Critiques</span>
+			</h1>
+		</div>
+	  	<div class="col-md-4">	   
+		  	#{form @Application.search()} 
+		  		</br>
+		  		<div class="dark">
+	          		<input name="keywords" id="keywords" maxlength="128" value="${params.keywords}" type="text" autofocus class="search rounded" placeholder="Recherche..." data-url="@{Application.listMovies()}"/> 
+	        	</div>
+	        #{/form}
+    	</div>
+	</div>    
 	<br />
 
 	#{if session.contains("username") }
-		<div id="navigation">
-			<ul id="adminMenu">
-				<li><a href="@{Secure.login()}">Accueil</a></li>
-				<li><a href="/topFilms/">Top Films</a></li>
-				<li><a href="/topCritiques/">Top Critiques</a></li>
-				<li><a href="/topUsers/">Top Utilisateurs</a></li>
-				<li><a href="/filmsAffiche/">Films à l'affiche</a></li>
-			</ul>
-		</div>
-		<div id="sub-navigation">
-			<ul id="adminMenu">
-				<li><a href="/myCriticals/">Mes critiques</a></li>
-				<li><a href="/myNotes/">Mes notes</a></li>
-				<li><a href="/addMovie/">Ajouter un film</a></li>
-				<li><a href="@{Secure.logout()}">Déconnexion</a></li>
-			</ul>
-			<div id="search">
-				#{form @Application.search()} 
-					<input name="keywords" id="keywords" maxlength="128" value="${params.keywords}" type="text" autofocus class="autocomplete-value" data-url="@{Application.listMovies()}" /> 
-					<input type="submit" value="Recherche Film" class="search-button"/> 
-				#{/form}
-			</div>
+		<div class="navbar navbar-default">
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="@{Secure.login()}">Accueil</a>
+		  </div>
+		  <div class="navbar-collapse collapse navbar-responsive-collapse">
+		    <ul class="nav navbar-nav">
+		      <li><a href="/topFilms/">Top films</a></li>
+		      <li><a href="/topCritiques/">Top critiques</a></li>
+		      <li><a href="/topUsers/">Top utilisateurs</a></li>
+		      <li><a href="/filmsAffiche/">Films à l'affiche</a></li>
+		      <li class="dropdown">
+		        <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Mon compte<b class="caret"></b></a>
+		        <ul class="dropdown-menu">
+		          <li><a href="/myCriticals/">Mes critiques</a></li>
+		          <li><a href="/myNotes/">Mes notes</a></li>
+		          <li><a href="/addMovie/">Ajouter un film</a></li>
+		        </ul>
+		      </li>
+		    </ul>
+		    <form class="navbar-form navbar-left">
+		    </form>
+		    <ul class="nav navbar-nav navbar-right">
+		      <li><a href="@{Secure.logout()}">Déconnexion</a></li>
+		    </ul>
+		  </div>
 		</div>
 	#{/if} 
 	#{else}
-		<div id="navigation"></div>
-		<div id="sub-navigation">
-			<ul id="adminMenu">
-				<li><a href="@{Secure.login()}">Accueil</a></li>
-				<li><a href="/topFilms/">Top Films</a></li>
-				<li><a href="/topCritiques/">Top Critiques</a></li>
-				<li><a href="/topUsers/">Top Utilisateurs</a></li>
-				<li><a href="/filmsAffiche/">Films à l'affiche</a></li>
-			</ul>
-			<div id="search">
-				#{form @Application.search()} 
-					<input name="keywords" id="keywords" maxlength="128" value="${params.keywords}" type="text" autofocus class="autocomplete-value" data-url="@{Application.listMovies()}" /> 
-					<input type="submit" value="Recherche Film" class="search-button"/>
-				#{/form}
-			</div>
+		<div class="navbar navbar-default">
+		  <div class="navbar-header">
+		    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		      <span class="icon-bar"></span>
+		    </button>
+		    <a class="navbar-brand" href="@{Secure.login()}">Accueil</a>
+		  </div>
+		  <div class="navbar-collapse collapse navbar-responsive-collapse">
+		    <ul class="nav navbar-nav">
+		      <li><a href="/topFilms/">Top films</a></li>
+		      <li><a href="/topCritiques/">Top critiques</a></li>
+		      <li><a href="/topUsers/">Top utilisateurs</a></li>
+		      <li><a href="/filmsAffiche/">Films à l'affiche</a></li>
+		    </ul>
+		    <form class="navbar-form navbar-left">
+		    </form>
+		    <ul class="nav navbar-nav navbar-right">
+		    </ul>
+		  </div>
 		</div>
 	#{/else}
 </div>

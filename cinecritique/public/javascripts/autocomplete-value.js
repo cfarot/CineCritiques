@@ -2,7 +2,7 @@
 
 $(function() {
 
-   $('input.autocomplete-value').each( function() {
+   $('input.search').each( function() {
       var $input = $(this);
       var serverUrl = $input.data('url');
        
