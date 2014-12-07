@@ -1,14 +1,13 @@
-Cette application est un site de critiques cinéma.
+Cette application est un site de critiques cinÃ©ma.
 Dans la classe Jobs.java(5.) : l'envoi d'un fichier excel toute les 5 minutes contenant la liste des films du site.
 
-Utilisation de la librairie jsoup pour récupérer 10 films à l'affiche sur allociné.
-Et création des fiches des films à l'affiche en récupérant les données sur allociné.(Controllers "Application" dernière méthode "filmsAffiche()"
+Utilisation de la librairie jsoup pour rÃ©cupÃ©rer 10 films Ã  l'affiche sur allocinÃ©.
+Et crÃ©ation des fiches des films Ã  l'affiche en rÃ©cupÃ©rant les donnÃ©es sur allocinÃ©.(Controllers "Application" derniÃ¨re mÃ©thode "filmsAffiche()"
 
 1. Installer play 1.2.5
 
-2. Ajout de la librairie jsoup dans l'installation de play:
-   Placez vous dans le dossier cinecritique et lancer la commande :
-	  play deps --verbose
+2. Placez vous dans le dossier cinecritique et lancer la commande :
+	play deps --verbose
 	  
    puis revenez dans le dossier au-dessus: 
 	  cd .. 
@@ -17,9 +16,9 @@ Et création des fiches des films à l'affiche en récupérant les données sur alloc
    Lancer la commande: 
 	  play eclipsify cinecritique 
 
-4.(facultatif) Configuration de la base de donnée:
+4.(facultatif) Configuration de la base de donnÃ©e:
 	Dans le fichier : cinecritique\conf\application.conf 
-	actuellement (ligne 85): db=mem (base de données en mémoire)	
+	actuellement (ligne 85): db=mem (base de donnÃ©es en mÃ©moire)	
 			
 5. lancer la commande: play run cinecritique
 
